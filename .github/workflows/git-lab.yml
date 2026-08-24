@@ -1,0 +1,14 @@
+name: Git Lab Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate Git lab
+        run: ./tests/test_git_lab.sh
